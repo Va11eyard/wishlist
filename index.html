@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Va11eyard's Wishlist</title>
+  <meta name="description" content="Everything on my list, from a new house to the small stuff.">
+  <meta property="og:title" content="Va11eyard's Wishlist">
+  <meta property="og:description" content="Everything on my list, from a new house to the small stuff.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%234f46e5'/%3E%3Cpath d='M7 15.5 16 8l9 7.5' stroke='%23fff' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 15v8h12v-8' stroke='%23fff' stroke-width='2.4' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="topbar">
+    <span>Va11eyard's personal wishlist</span>
+    <span>Updated October 2026</span>
+  </div>
+
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a class="logo" href="#top" aria-label="Back to top">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11.5 12 5l8 6.5"/><path d="M6.5 11v7h11v-7"/></svg>
+        </span>
+        <span class="logo-word">VA11EYARD</span>
+        <span class="logo-badge">Wishlist</span>
+      </a>
+      <div class="search" role="search">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="search-input" type="search" placeholder="Search wishes" autocomplete="off" aria-label="Search wishes">
+      </div>
+      <button class="cart" id="cart-chip" type="button" aria-label="Wishes shown, activate to reset filters">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="20" r="1.4"/><circle cx="17" cy="20" r="1.4"/><path d="M3 4h2l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h7.9a1.5 1.5 0 0 0 1.5-1.2L20 8H6"/></svg>
+        <span id="cart-count">15</span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="cats" aria-label="Categories">
+    <div class="container cats-row" id="cat-strip"></div>
+  </nav>
+
+  <main id="top">
+    <section class="container">
+      <div class="hero">
+        <div class="hero-copy">
+          <span class="eyebrow eyebrow-goal">Main goal</span>
+          <h1>A New House</h1>
+          <p class="hero-spec">2 or 3 rooms</p>
+          <p class="hero-price">~40 000 000 &#8376;</p>
+          <div class="hero-block">
+            <h2 class="mini-label">Builders</h2>
+            <div class="chip-row" id="builders"></div>
+          </div>
+          <div class="hero-block">
+            <h2 class="mini-label">Residences on the shortlist</h2>
+            <div class="chip-row" id="residences"></div>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 360 300" role="img">
+            <rect x="0" y="0" width="360" height="300" fill="none"/>
+            <circle cx="292" cy="64" r="26" fill="#ff91a4"/>
+            <path d="M40 236h280" stroke="#1f1f1f" stroke-width="3" stroke-linecap="round"/>
+            <path d="M92 236v-88l88-56 88 56v88" fill="#ffffff" stroke="#1f1f1f" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M74 158 180 88l106 70" fill="none" stroke="#1f1f1f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M74 158 180 88l106 70 -14 10L180 108 88 168Z" fill="#007bff"/>
+            <rect x="118" y="168" width="34" height="34" fill="#dbeafe" stroke="#1f1f1f" stroke-width="3"/>
+            <rect x="208" y="168" width="34" height="34" fill="#dbeafe" stroke="#1f1f1f" stroke-width="3"/>
+            <path d="M135 168v34M118 185h34M225 168v34M208 185h34" stroke="#1f1f1f" stroke-width="2"/>
+            <rect x="164" y="182" width="32" height="54" fill="#4f46e5" stroke="#1f1f1f" stroke-width="3"/>
+            <circle cx="190" cy="210" r="2.4" fill="#ffffff"/>
+            <path d="M300 236c0-26 4-38 4-38s4 12 4 38" fill="none" stroke="#1f7a57" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="304" cy="186" r="14" fill="#2caa7d" stroke="#1f1f1f" stroke-width="3"/>
+            <path d="M52 236c0-20 3-30 3-30s3 10 3 30" fill="none" stroke="#1f7a57" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="55" cy="196" r="11" fill="#2caa7d" stroke="#1f1f1f" stroke-width="3"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="container catalog">
+      <div class="catalog-head">
+        <h2>The catalog</h2>
+        <p id="result-count">Showing 15 of 15 wishes</p>
+      </div>
+      <div class="grid" id="grid"></div>
+      <div class="empty" id="empty" hidden>
+        <p>Nothing matches this filter.</p>
+        <button type="button" id="empty-reset">Show everything</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>The list</h3>
+        <p class="footer-note">Everything on my list, from the house to the small stuff.</p>
+      </div>
+      <div>
+        <h3>By status</h3>
+        <ul>
+          <li><button type="button" data-status="goal">Main goal</button></li>
+          <li><button type="button" data-status="after">After the house</button></li>
+          <li><button type="button" data-status="all">Everything</button></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Categories</h3>
+        <ul>
+          <li><button type="button" data-cat="home">Home</button></li>
+          <li><button type="button" data-cat="tech">Tech</button></li>
+          <li><button type="button" data-cat="software">Software</button></li>
+          <li><button type="button" data-cat="all">All categories</button></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Connect</h3>
+        <ul>
+          <li><a href="https://github.com/Va11eyard" target="_blank" rel="noopener">GitHub profile</a></li>
+          <li><a href="https://github.com/Va11eyard/wishlist" target="_blank" rel="noopener">Source of this page</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <span>&#169; 2026 Va11eyard</span>
+        <span>Static site on GitHub Pages</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
